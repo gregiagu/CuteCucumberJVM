@@ -11,5 +11,6 @@ import static io.cucumber.core.options.Constants.*;
 @IncludeEngines("cucumber")
 @SelectClasspathResource("features/what-is-cucumber.feature")
 @ConfigurationParameter( key = GLUE_PROPERTY_NAME, value = "io.github.gregiagu.definitions" )
+@ConfigurationParameter( key = PLUGIN_PROPERTY_NAME, value = "pretty,json:target/report/what-is-cucumber.json" )
 public class WhatIsCucumberRunner {
 }

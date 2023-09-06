@@ -2,9 +2,11 @@ package io.github.gregiagu.ut;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class HelloTest {
     @Test
     void helloTest() {
-        System.out.println("Hello test");
+        assertTrue(true);
     }
 }
