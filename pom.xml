@@ -37,6 +37,9 @@
 
     <dependencies>
 
+        <!--
+            Cucumber
+        -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
@@ -47,6 +50,9 @@
             <artifactId>cucumber-junit-platform-engine</artifactId>
         </dependency>
 
+        <!--
+            jUnit 5
+        -->
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-suite</artifactId>
@@ -62,6 +68,9 @@
     <build>
         <plugins>
 
+            <!--
+                Build to specific java version
+            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -70,6 +79,29 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                     <source>${java.target.version}</source>
                     <target>${java.target.version}</target>
+                </configuration>
+            </plugin>
+
+            <!--
+                Run Cucumber Suite as Integration Test
+            -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>run-test-against-target</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>integration-test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <includes>
+                        <include>*Runner.java</include>
+                    </includes>
                 </configuration>
             </plugin>
 
