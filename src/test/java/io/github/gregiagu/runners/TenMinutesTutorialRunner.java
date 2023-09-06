@@ -5,11 +5,11 @@ import org.junit.platform.suite.api.IncludeEngines;
 import org.junit.platform.suite.api.SelectClasspathResource;
 import org.junit.platform.suite.api.Suite;
 
-import static io.cucumber.core.options.Constants.*;
+import static io.cucumber.core.options.Constants.GLUE_PROPERTY_NAME;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("features/what-is-cucumber.feature")
+@SelectClasspathResource("features/ten-minutes-tutorial.feature")
 @ConfigurationParameter( key = GLUE_PROPERTY_NAME, value = "io.github.gregiagu.definitions" )
-public class WhatIsCucumberRunner {
+public class TenMinutesTutorialRunner {
 }
