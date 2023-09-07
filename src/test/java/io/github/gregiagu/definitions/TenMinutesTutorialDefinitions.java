@@ -3,6 +3,7 @@ package io.github.gregiagu.definitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.gregiagu.tgif.IsItFriday;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -30,11 +31,5 @@ public class TenMinutesTutorialDefinitions {
     @Given("today is {string}")
     public void today_is(String today) {
         this.today = today;
-    }
-}
-
-class IsItFriday {
-    public static String isItFriday(String today) {
-        return "Friday".equals(today) ? "TGIF" : "Nope";
     }
 }
